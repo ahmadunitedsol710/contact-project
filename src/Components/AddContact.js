@@ -24,6 +24,15 @@ const AddContact = ({ contact, setContact, local_storage_key }) => {
   },[contact]);
 
     const navigate = useNavigate();
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    useEffect(() => {
+        if (isSubmitted) {
+          navigate(-1); // Navigate back to the previous page after state update
+        }
+      }, [isSubmitted, navigate]);
+
+
     const add = (e) => {
         e.preventDefault();
         if (fname === "" || lname === "" || email === "" || country === "" || number === "" || province === "") {
@@ -41,7 +50,7 @@ const AddContact = ({ contact, setContact, local_storage_key }) => {
         setNumber("");
 
 
-        navigate("/");
+        setIsSubmitted(true); 
     };
 
     return (

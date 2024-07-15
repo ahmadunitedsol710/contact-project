@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
-import ContactDetails from './ContactDetails';
 import './App.css';
 
 function App() {

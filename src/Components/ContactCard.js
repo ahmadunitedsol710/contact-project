@@ -32,7 +32,10 @@ const ContactCard = (props) => {
                             <td className='align-content-center' data-label="Province">{item.province}</td>
                             <td className='align-content-center' data-label="Postal Code">{item.postal}</td>
                             <td className='align-content-center' data-label="Mobile No.">{item.number}</td>
-                            <td className='align-content-center' data-label="Action"> <i class="bi bi-trash3" style={{ color: "red", marginTop: "7px" }} onClick={() => props.clickHandler(item.id)}></i> </td>
+                            <td className='align-content-center' data-label="Action"> 
+                                <i class="bi bi-trash3" style={{ color: "red", marginTop: "7px" }} onClick={() => props.clickHandler(item.id)}></i>
+                                <i class="bi bi-pencil-square" style={{ color: "green", marginTop: "7px", marginLeft: "7px" }} ></i> 
+                            </td>
                         </tr>
                 )}
             </tbody>

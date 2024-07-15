@@ -6,7 +6,7 @@ const ContactDetails = (props) => {
     console.log(props);
     return (
         <div className="container main">
-            {/* <form>
+            <form>
                 <div className="row">
                     <div className='col-sm-6'>
                         <label className='form-label'>First Name</label>
@@ -38,7 +38,7 @@ const ContactDetails = (props) => {
                         value="ahmadkamal710@gmail.com"
                     />
                 </div>
-            </form> */}
+            </form>
         </div>
     );
 };

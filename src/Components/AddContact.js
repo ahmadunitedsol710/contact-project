@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link, useNavigate } from 'react-router-dom';
 
 const AddContact = ({ contact, setContact, local_storage_key }) => {
-    const navigate = useNavigate();
     const [fname, setfName] = useState("");
     const [lname, setlName] = useState("");
     const [email, setEmail] = useState("");
@@ -16,7 +15,6 @@ const AddContact = ({ contact, setContact, local_storage_key }) => {
 
   // Get contacts from Add Contact component "contacts"
   const addContactHandler = (contacts) => {
-    console.log([...contact, { id: uuidv4(), ...contacts }])
     setContact([...contact, { id: uuidv4(), ...contacts }]);
   };
 
@@ -25,7 +23,7 @@ const AddContact = ({ contact, setContact, local_storage_key }) => {
     localStorage.setItem(local_storage_key, JSON.stringify(contact));
   },[contact]);
 
-
+    const navigate = useNavigate();
     const add = (e) => {
         e.preventDefault();
         if (fname === "" || lname === "" || email === "" || country === "" || number === "" || province === "") {

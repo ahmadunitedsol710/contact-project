@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* Custom css */
+
+.contact_list .image {
+  width: 40px;
+  border: none;
+  padding: 0;
+}
+
+.form-label {
+  margin-top: 1rem;
+}

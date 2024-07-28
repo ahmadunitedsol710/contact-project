@@ -2,11 +2,6 @@ import user from '../images/user.png';
 import { Link } from "react-router-dom";
 
 const ContactCard = (props) => {
-    //     const {contact, setContact} =props
-
-    // const clickhandler = (item) => {
-    //     setContact(item);
-    // };
 
     return (
         <>
@@ -27,7 +22,7 @@ const ContactCard = (props) => {
                 </thead>
                 <tbody>
                     {props.contact && props.contact.map((item) => (
-                        <tr>
+                        <tr key={item.id}>
                             <td className='align-content-center' data-label="Image">
                                 <img className='img-thumbnail image' src={user} alt='user' />
                             </td>

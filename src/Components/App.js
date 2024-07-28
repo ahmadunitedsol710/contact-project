@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './header';
 import AddContact from './AddContact';
@@ -9,16 +9,31 @@ import './App.css';
 function App() {
   const local_storage_key = 'contact';
   const [contact, setContact] = useState([]);
-  // const [editcontact, seteditcontact] = useState([]);
-
 
   const updateContactHandler = (updatedContact) => {
-    console.log("dad",updatedContact)
-    setContact(contact.map(contact => contact.id === updatedContact.id ? updatedContact : contact));
-    console.log("dad",contact)
-    localStorage.setItem('contacts', JSON.stringify(contact));
+
+    const updatedContactList = contact.map((contact) => 
+      contact.id === updatedContact.id ? updatedContact : contact
+    )
+
+    setContact(updatedContactList);
+    localStorage.setItem(local_storage_key, JSON.stringify(updatedContactList));
+ 
+    console.log("After Contact",contact)
+    console.log("After Updated Contact",updatedContactList)
+    console.log("After Local Storage",localStorage.contact)
   };
 
+  
+  useEffect(() => {
+    const storedContacts = JSON.parse(localStorage.getItem(local_storage_key));
+    if (storedContacts && storedContacts.length > 0) {
+      setContact(storedContacts);
+      console.log("Loaded contacts from localStorage:", storedContacts);
+    }
+  }, []);
+
+  
   return (
     <div className='container mt-lg-5 mb-lg-5'>
     <Router>

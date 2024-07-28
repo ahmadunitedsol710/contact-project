@@ -31,7 +31,6 @@ function ContactDetails({ contact, updateContactHandler }) {
         alert("All fields are required");
         return;
       }
-       console.log("fun",formData)
       updateContactHandler({
         id,
         formData

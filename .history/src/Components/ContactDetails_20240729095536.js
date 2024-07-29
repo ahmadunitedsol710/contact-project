@@ -7,7 +7,7 @@ function ContactDetails({ contact, updateContactHandler }) {
     const navigate = useNavigate();
     const contactToEdit = contact.find(contact => contact.id === id);
 
-    const [formData, setFormData] = useState({ fname:contactToEdit.fname, lname:contactToEdit.lname, email: contactToEdit.email, country: contactToEdit.country, city:contactToEdit.city, province: contactToEdit.province, postal:contactToEdit.postal, number:contactToEdit.number  });
+    const [formData, setFormData] = useState({ fname:contactToEdit.fname, lname:contactToEdit.lname, email: contactToEdit.email, city:contactToEdit.city, postal:contactToEdit.postal, number:contactToEdit.number  });
 
     function changeField(e){
         let name = e.target.name;
@@ -25,20 +25,18 @@ function ContactDetails({ contact, updateContactHandler }) {
   
     const update = (e) => {
       e.preventDefault();
-      if (!formData.fname ) {
-        alert("All fields are required");
-        return;
-      }
+    //   if (!formData.fname ) {
+    //     alert("All fields are required");
+    //     return;
+    //   }
       updateContactHandler({
         id,
         fname: formData.fname,
         lname: formData.lname,
         email: formData.email,
-        country: formData.country,
         city: formData.city,
-        province: formData.province,
         postal: formData.postal,
-        number: formData.number
+        
 
       });
   
@@ -83,9 +81,9 @@ function ContactDetails({ contact, updateContactHandler }) {
                     />
                 </div>
 
-                <div className="col-sm-12">
+                {/* <div className="col-sm-12">
                         <label className='form-label'>Country</label>
-                        <select className="form-select" name='country' value={formData.country} onChange={changeField}>
+                        <select className="form-select" value={formData.country} onChange={changeField}>
                             <option value="afghanistan">Afghanistan</option>
                             <option value="armenia">Armenia</option>
                             <option value="azerbaijan">Azerbaijan</option>
@@ -136,7 +134,7 @@ function ContactDetails({ contact, updateContactHandler }) {
                             <option value="vietnam">Vietnam</option>
                             <option value="yemen">Yemen</option>
                         </select>
-                </div>
+                </div> */}
 
                 <div className="row">
                     <div className="col-sm-6">
@@ -149,9 +147,9 @@ function ContactDetails({ contact, updateContactHandler }) {
                             onChange={changeField}
                         />
                     </div>
-                    <div className="col-sm-6">
+                    {/* <div className="col-sm-6">
                         <label className='form-label'>Province</label>
-                        <select className="form-select" name='province' value={formData.province} onChange={changeField}>
+                        <select className="form-select" value={formData.province} onChange={changeField}>
                             <option value="">Province</option>
                             <option value="PU" >Punjab</option>
                             <option value="KPK">KPK</option>
@@ -159,7 +157,7 @@ function ContactDetails({ contact, updateContactHandler }) {
                             <option value="BAL">Balochisan</option>
                             <option value="GIL">Gilgit</option>
                         </select>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="row">

@@ -25,10 +25,10 @@ function ContactDetails({ contact, updateContactHandler }) {
   
     const update = (e) => {
       e.preventDefault();
-      if (!formData.fname ) {
-        alert("All fields are required");
-        return;
-      }
+    //   if (!formData.fname ) {
+    //     alert("All fields are required");
+    //     return;
+    //   }
       updateContactHandler({
         id,
         fname: formData.fname,

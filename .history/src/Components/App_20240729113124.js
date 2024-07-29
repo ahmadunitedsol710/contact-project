@@ -14,8 +14,13 @@ function App() {
     const updatedContactList = contact.map((contact) => 
       contact.id === updatedContact.id ? updatedContact : contact
     )
+
     setContact(updatedContactList);
     localStorage.setItem(local_storage_key, JSON.stringify(updatedContactList));
+ 
+    // console.log("After Contact",contact)
+    // console.log("After Updated Contact",updatedContactList)
+    // console.log("After Local Storage",localStorage.contact)
   };
 
   

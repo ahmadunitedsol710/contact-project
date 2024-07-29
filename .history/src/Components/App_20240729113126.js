@@ -16,6 +16,10 @@ function App() {
     )
     setContact(updatedContactList);
     localStorage.setItem(local_storage_key, JSON.stringify(updatedContactList));
+ 
+    // console.log("After Contact",contact)
+    // console.log("After Updated Contact",updatedContactList)
+    // console.log("After Local Storage",localStorage.contact)
   };
 
   

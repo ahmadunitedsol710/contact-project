@@ -6,10 +6,12 @@ function ContactDetails({ contact, updateContactHandler }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const contactToEdit = contact.find(contact => contact.id === id);
+    console.log("Contact to edit", contactToEdit)
 
     const [formData, setFormData] = useState({ fname:contactToEdit.fname, lname:contactToEdit.lname, email: contactToEdit.email, country: contactToEdit.country, city:contactToEdit.city, province: contactToEdit.province, postal:contactToEdit.postal, number:contactToEdit.number  });
 
     function changeField(e){
+        console.log(e.target.name, e.target.value)
         let name = e.target.name;
         let value = e.target.value;
         let formObject = { ...formData };
@@ -25,10 +27,10 @@ function ContactDetails({ contact, updateContactHandler }) {
   
     const update = (e) => {
       e.preventDefault();
-      if (!formData.fname ) {
-        alert("All fields are required");
-        return;
-      }
+    //   if (!formData.fname ) {
+    //     alert("All fields are required");
+    //     return;
+    //   }
       updateContactHandler({
         id,
         fname: formData.fname,
